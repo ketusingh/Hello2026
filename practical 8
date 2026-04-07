@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Gradient Background */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            color: white;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        /* Gallery Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Card */
+        .card {
+            overflow: hidden;
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        /* Image */
+        .card img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        /* Hover Effects */
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .card:hover img {
+            transform: scale(1.2);
+            filter: brightness(70%);
+        }
+
+        /* Overlay Text */
+        .card::after {
+            content: "View Image";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            color: #fff;
+            font-size: 1.2rem;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <h1>My Image Gallery</h1>
+    </header>
+
+    <section class="gallery">
+        <div class="card">
+            <img src="https://picsum.photos/id/1015/400/300" alt="Image 1">
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/id/1016/400/300" alt="Image 2">
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/id/1018/400/300" alt="Image 3">
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/id/1020/400/300" alt="Image 4">
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/id/1024/400/300" alt="Image 5">
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/id/1027/400/300" alt="Image 6">
+        </div>
+    </section>
+
+</body>
+</html>
