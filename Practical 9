@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive CSS3 Demo</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<!-- Icons (Font Awesome CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f4f4;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn 2s ease-in;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  background: #333;
+}
+
+nav a {
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: #575757;
+}
+
+/* Multi-column section */
+.columns {
+  column-count: 3;
+  column-gap: 20px;
+  padding: 20px;
+}
+
+.columns p {
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Cards with icons */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  width: 300px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card i {
+  font-size: 40px;
+  color: #4facfe;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Button animation */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #4facfe;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media(max-width: 900px) {
+  .columns {
+    column-count: 2;
+  }
+}
+
+@media(max-width: 600px) {
+  .columns {
+    column-count: 1;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>CSS3 Responsive Webpage</h1>
+  <p>Using columns, icons, animations & transformations</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</nav>
+
+<!-- Multi-column text -->
+<section class="columns">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</p>
+  <p>In condimentum facilisis porta.</p>
+  <p>Sed nec diam eu diam mattis viverra.</p>
+  <p>Nulla fringilla, orci ac euismod semper.</p>
+  <p>Praesent dapibus, neque id cursus faucibus.</p>
+</section>
+
+<!-- Cards with icons -->
+<section class="container">
+  <div class="card">
+    <i class="fas fa-laptop-code"></i>
+    <h3>Web Development</h3>
+    <p>Modern responsive websites using latest technologies.</p>
+    <a href="#" class="btn">Learn More</a>
+  </div>
+
+  <div class="card">
+    <i class="fas fa-mobile-alt"></i>
+    <h3>Mobile Friendly</h3>
+    <p>Optimized for all screen sizes and devices.</p>
+    <a href="#" class="btn">Learn More</a>
+  </div>
+
+  <div class="card">
+    <i class="fas fa-rocket"></i>
+    <h3>Fast Performance</h3>
+    <p>Speed optimized for better user experience.</p>
+    <a href="#" class="btn">Learn More</a>
+  </div>
+</section>
+
+</body>
+</html>
